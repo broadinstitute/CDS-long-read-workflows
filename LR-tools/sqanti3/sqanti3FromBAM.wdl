@@ -63,7 +63,7 @@ task convertSAMtoGTF_CTATLRTask {
     >>>
 
     output {
-        File alignmentGTF = "~{baseBamName}"
+        File alignmentGTF = "~{baseBamName}.gtf"
         File monitoringLog = "monitoring.log"
     }
 
