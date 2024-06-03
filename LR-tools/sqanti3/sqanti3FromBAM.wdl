@@ -59,7 +59,7 @@ task convertSAMtoGTF_CTATLRTask {
         SAM_to_gxf.pl --format gtf ~{extra_arg} \
             --sam ${baseBamName}.backformatted.sam \
             > temp.sam_to_gxf
-        grep -P "[A-z0-1]" temp.sam_to_gxf > {baseBamName}.gtf
+        grep -P "[A-z0-1]" temp.sam_to_gxf > ${baseBamName}.gtf
     >>>
 
     output {
