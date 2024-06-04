@@ -54,7 +54,8 @@ task convertSAMtoGTF_CTATLRTask {
         reformat.sh \
             in=~{inputBAM} \
             out=${baseBamName}.backformatted.sam \
-            sam=1.3
+            sam=1.3 \
+            ref="GRCh38_GIABv3_no_alt_analysis_set_maskedGRC_decoys_MAP2K3_KMT2C_KCNJ18.fasta"
 
         SAM_to_gxf.pl --format gtf ~{extra_arg} \
             --sam ${baseBamName}.backformatted.sam \
