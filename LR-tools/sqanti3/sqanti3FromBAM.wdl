@@ -37,6 +37,7 @@ task convertSAMtoGTF_CTATLRTask {
     input {
         File inputBAM
         File inputBAMIndex
+        File referenceFasta
         Int memoryGB = 16
         Boolean allowNonPrimary
         # Int diskSizeGB
@@ -50,6 +51,8 @@ task convertSAMtoGTF_CTATLRTask {
 
     command <<<
         bash ~{monitoringScript} > monitoring.log &
+
+        gsutil cp ~{referenceFasta} .
 
         reformat.sh \
             in=~{inputBAM} \
