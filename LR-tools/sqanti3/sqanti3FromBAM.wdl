@@ -254,6 +254,7 @@ workflow sqanti3FromBam {
             input:
                 inputBAM = inputBAM,
                 inputBAMIndex = inputBAMIndex,
+                referenceFasta = referenceFasta,
                 # memoryGB = memoryGB,
                 allowNonPrimary = allowNonPrimary,
                 docker = docker,
