@@ -52,13 +52,11 @@ task convertSAMtoGTF_CTATLRTask {
     command <<<
         bash ~{monitoringScript} > monitoring.log &
 
-        gsutil cp ~{referenceFasta} .
-
         reformat.sh \
             in=~{inputBAM} \
             out=${baseBamName}.backformatted.sam \
             sam=1.3 \
-            ref="GRCh38_GIABv3_no_alt_analysis_set_maskedGRC_decoys_MAP2K3_KMT2C_KCNJ18.fasta"
+            ref=~{referenceFasta}
 
         SAM_to_gxf.pl --format gtf ~{extra_arg} \
             --sam ${baseBamName}.backformatted.sam \
